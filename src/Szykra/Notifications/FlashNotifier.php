@@ -100,7 +100,7 @@ class FlashNotifier {
                 throw new \InvalidArgumentException('Cannot resolve arguments. Please provide one parameter as `message` or two parameters as `title` and `message`.');
         }
 
-        $this->notifies[] = ['title' => $title, 'message' => $message, 'inportant' => $important, 'level' => $level];
+        $this->notifies[] = ['title' => $title, 'message' => $message, 'important' => $important, 'level' => $level];
 
         $this->push();
 
