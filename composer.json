@@ -1,5 +1,5 @@
 {
-    "name": "szykra/laravel-flash-notifications",
+    "name": "jozefbalun/laravel-flash-notifications",
     "license": "MIT",
     "keywords": ["laravel", "flash", "notifications", "alerts", "bootstrap", "messages"],
     "description": "Easy way to display Flash Notifications in Laravel 5.",
