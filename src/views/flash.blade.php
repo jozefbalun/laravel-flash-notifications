@@ -12,5 +12,6 @@
         </div>
 
     @endforeach
+    {{ app('session')->forget('flash.alerts') }}
 @endif
 
