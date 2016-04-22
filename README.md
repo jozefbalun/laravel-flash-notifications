@@ -56,7 +56,7 @@ Flash::info('Your alert message here!');
 
 ~~Method `push()` exists because you can push more than one alert at the same time. _See below_.~~
 
-Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters, first will be _title_ and second will be _message_.
+Every alert method takes 1, 2 or 3 arguments. If you give one parameter it will be _message_. If you provide two parameters, first will be _title_ and second will be _message_. If you provide three parameters first will be _title_, second will be _message_ and third will be _important_.
 
 ```php
 Flash::success('User has been updated successfully.');
@@ -72,7 +72,7 @@ Just create new _blade_ template file!
 @if(Session::has('flash.alerts'))
     @foreach(Session::get('flash.alerts') as $alert)
 
-        <div class='alert alert-{{ $alert['level'] }}'>
+        <div class='alert alert-{{ $alert['level'] }} @if($alert['important']) alert-important @endif'>
             <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
 
             @if( ! empty($alert['title']))
@@ -92,6 +92,7 @@ All alerts will be in `flash.alerts` session variable. Single alert looks like:
 [
   'title' => 'Title',
   'message' => 'Example message',
+  'important' => true|false,
   'level' => 'success'
 ]
 ```
