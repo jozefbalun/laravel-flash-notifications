@@ -81,19 +81,26 @@ class FlashNotifier {
     {
         switch(count($args))
         {
+            case 3:
+                $title = $args[0];
+                $message = $args[1];
+                $important = $args[2];
+                break;
             case 2:
                 $title = $args[0];
                 $message = $args[1];
+                $important = false;
                 break;
             case 1:
                 $title = '';
                 $message = $args[0];
+                $important = false;
                 break;
             default:
                 throw new \InvalidArgumentException('Cannot resolve arguments. Please provide one parameter as `message` or two parameters as `title` and `message`.');
         }
 
-        $this->notifies[] = ['title' => $title, 'message' => $message, 'level' => $level];
+        $this->notifies[] = ['title' => $title, 'message' => $message, 'inportant' => $important, 'level' => $level];
 
         $this->push();
 
